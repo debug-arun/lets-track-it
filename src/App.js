@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header'
+import FormBox from './components/FormBox'
+import { Row, Col } from 'reactstrap';
+import { Image } from 'react-bootstrap';
+import bgImage from './images/background-image.jpg';
+import mobImage from './images/mobile-image.jpg';
+
+const useWindowWidth = () => {
+  const [windowWidth, setWindowWidth ] = useState(window.innerWidth);
+  
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  },[]);
+  
+  return windowWidth;
+};
 
 function App() {
+  let windowWidth = useWindowWidth();
+  document.title = "Let's Track It"
+  const imageUrl = windowWidth >= 650 ? bgImage : mobImage;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Image src={ imageUrl } className='background-image' />
+      <Header />
+      <Row>
+        <Col md='3' />
+        <Col md='6'>
+          <FormBox />
+        </Col>
+        <Col md='3' />
+      </Row>
     </div>
   );
 }
