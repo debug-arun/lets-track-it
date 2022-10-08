@@ -6,6 +6,8 @@ import { Row, Col } from 'reactstrap';
 import { Image } from 'react-bootstrap';
 import bgImage from './images/background-image.jpg';
 import mobImage from './images/mobile-image.jpg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth ] = useState(window.innerWidth);
@@ -24,20 +26,25 @@ const useWindowWidth = () => {
 
 function App() {
   let windowWidth = useWindowWidth();
-  document.title = "Let's Track It"
   const imageUrl = windowWidth >= 650 ? bgImage : mobImage;
   return (
-    <div className="App">
-      <Image src={ imageUrl } className='background-image' />
-      <Header />
-      <Row>
-        <Col md='3' />
-        <Col md='6'>
-          <FormBox />
-        </Col>
-        <Col md='3' />
-      </Row>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' 
+        element=<div className="App">
+            <Image src={ imageUrl } className='background-image' />
+            <Header />
+            <Row>
+              <Col md='3' />
+              <Col md='6'>
+                <FormBox />
+              </Col>
+              <Col md='3' />
+            </Row>
+          </div>
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
