@@ -39,9 +39,9 @@ const FormBox = () => {
                 <h2 className="py-2">Welcome!</h2>
                 {err && <Alert color="danger">{err}</Alert>}
                 <Label htmlFor="link-field" className="py-2 field-name">Link </Label>
-                <Input required id="link-field" placeholder="Enter the link of the item on Amazon or Flipkart" className="field-place" autoComplete="off" autoFocus />
+                <Input required id="link-field" placeholder="Enter the link of the item on Amazon or Flipkart" className="field-place" autoFocus />
                 <Label htmlFor="email" className="py-2 field-name">E-mail ID </Label>
-                <Input required id="email" type="email" placeholder="Enter your email-id" className="field-place" autoComplete="off" />
+                <Input required id="email" type="email" placeholder="Enter your email-id" className="field-place" />
                 <Label htmlFor="trigger" className="py-2 field-name">Trigger limit </Label>
                 <Input required id="trigger" type="number" placeholder="Enter the number of times you need the email trigger" className="field-place" min={"1"} />
                 <Button type='submit' color="primary w-50 btn-dark mx-auto my-5 py-2" onClick={handleSubmit}>Submit</Button>

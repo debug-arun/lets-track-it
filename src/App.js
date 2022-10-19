@@ -4,8 +4,10 @@ import Header from './components/Header'
 import FormBox from './components/FormBox'
 import { Row, Col } from 'reactstrap';
 import { Image } from 'react-bootstrap';
+import { ToastContainer } from 'react-toastify';
 import bgImage from './images/background-image.jpg';
 import mobImage from './images/mobile-image.jpg';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -32,6 +34,7 @@ function App() {
       <Routes>
         <Route path='/' 
         element=<div className="App">
+            <ToastContainer />
             <Image src={ imageUrl } className='background-image' />
             <Header />
             <Row>
