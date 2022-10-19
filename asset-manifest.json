@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lets-track-it/static/css/main.6627eadd.css",
+    "main.js": "/lets-track-it/static/js/main.89e52381.js",
+    "static/media/background-image.jpg": "/lets-track-it/static/media/background-image.59798278f3b73e96faa7.jpg",
+    "static/media/mobile-image.jpg": "/lets-track-it/static/media/mobile-image.21770f1a3eafd38da583.jpg",
+    "index.html": "/lets-track-it/index.html",
+    "main.6627eadd.css.map": "/lets-track-it/static/css/main.6627eadd.css.map",
+    "main.89e52381.js.map": "/lets-track-it/static/js/main.89e52381.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6627eadd.css",
+    "static/js/main.89e52381.js"
+  ]
+}
